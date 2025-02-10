@@ -1,0 +1,92 @@
+.header-dropdown-menu {
+  &.MuiModal-root {
+    .MuiPaper-root {
+      margin: 0 auto;
+      left: 0 !important;
+      right: 0;
+      width: 100%;
+      // max-width: 400px;
+      border-radius: 0 0 $radius10 $radius10;
+      background: var(--primary-bg-2);
+      .MuiMenuItem-root {
+        @include font(14px, 44px, 600, var(--text-1));
+        &.Mui-selected {
+          background: var(--primary-bg-3) !important;
+        }
+      }
+    }
+  }
+}
+
+.wallet-dropdown-menu {
+  &.MuiModal-root {
+    margin: 0 20px;
+    .MuiPaper-root {
+      margin: 0 auto;
+      left: 0 !important;
+      right: 0;
+      width: 100%;
+      max-width: 375px;
+      border-radius: $radius10;
+      background: var(--primary-bg-2);
+      .MuiMenuItem-root {
+        @include font(14px, 44px, 600, var(--text-1));
+        &.Mui-selected {
+          background: var(--primary-bg-3) !important;
+        }
+      }
+    }
+  }
+}
+
+.my-profile-menu {
+  .MuiListItem-root {
+    padding: 16px 20px;
+    border-radius: $radius6;
+    cursor: pointer;
+    background: var(--primary-bg-2);
+    .MuiTypography-root {
+      @include font(16px, normal, 400, var(--text-3));
+    }
+    &.Mui-selected {
+      background: var(--primary-bg-3) !important;
+    }
+  }
+}
+
+.my-purchase-menu {
+  .MuiListItem-root {
+    padding: 16px 20px;
+    border-radius: $radius6;
+    background: var(--primary-bg-2);
+    .MuiTypography-root {
+      @include font(16px, normal, 400, var(--text-1));
+    }
+    &.Mui-selected {
+      background: var(--primary-bg-3) !important;
+    }
+  }
+}
+
+//Chip Style
+
+.MuiChip-root {
+  &.MuiChip-sizeMedium {
+    &.MuiChip-filledSecondary {
+      @include font(10px !important, normal, 600, var(--black) !important);
+      background: var(--primary);
+    }
+    .MuiChip-label {
+      padding: 0 16px !important;
+    }
+  }
+  &.MuiChip-exSmall {
+    height: 12px !important;
+    padding: 0 4px !important;
+    @include font(8px, normal, 400, var(--text-1));
+    background: var(--green) !important;
+    .MuiChip-label {
+      padding: 0 4px !important;
+    }
+  }
+}

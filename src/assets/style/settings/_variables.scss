@@ -1,0 +1,24 @@
+$font-family-primary: "Work Sans";
+
+//Border Radius
+$radius4: 4px;
+$radius6: 6px;
+$radius8: 8px;
+$radius10: 10px;
+$radius12: 12px;
+$radius20: 20px;
+$round-radius: 50px;
+$circle-radius: 50%;
+
+//borders
+$border-transparent: 1px solid transparent;
+$border-primary: 1px solid var(--primary);
+$border-white: 1px solid var(--white);
+$border-btn-selected: 2px solid var(--white);
+$border-1: 1px solid var(--border-1);
+$border-2: 1px solid var(--border-2);
+$border-3: 1px solid var(--border-3);
+$border-4: 1px solid var(--border-4);
+
+//Images
+$app-login-bg: url("../../img/login-bg.svg") center no-repeat;

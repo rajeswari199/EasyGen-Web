@@ -1,0 +1,53 @@
+.login {
+  &-page {
+    background: $app-login-bg;
+    background-size: cover;
+    height: 100vh;
+    &:before {
+      content: "";
+      // max-width: 400px;
+      @include sizing(100%, 100vh);
+      @include positionBottomLeftRight(absolute, 0, 0, 0);
+      background: var(--black-bg-60);
+    }
+  }
+  &-logo {
+    @include size(100px);
+    background: $app-login-logo;
+    background-size: contain;
+  }
+}
+
+.signup-page {
+  background: $app-login-bg;
+  background-size: cover;
+  height: 100vh;
+  &-inside {
+    height: calc(100vh - 55px);
+    &:before {
+      content: "";
+      margin: 0 auto;
+      // max-width: 400px;
+      @include sizing(100%, calc(100vh - 55px));
+      @include positionBottomLeftRight(absolute, 0, 0, 0);
+      background: var(--black-bg-60);
+    }
+  }
+}
+
+.login-header {
+  height: 55px;
+}
+
+//Verify page
+
+.verify-page {
+  height: 100vh;
+  &-inside {
+    height: calc(100vh - 55px);
+  }
+}
+
+//Forgot password pages
+.forgot-password-page {
+}

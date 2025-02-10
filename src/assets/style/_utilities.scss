@@ -1,0 +1,326 @@
+//Font Size
+$fontSizeConfig: 10, 12, 14, 16, 18, 20, 22, 24, 32, 34, 36, 38, 40, 42, 48;
+@each $font in $fontSizeConfig {
+  .f-#{nth($font, 1)} {
+    font-size: #{nth($font, 1)}px !important;
+  }
+}
+
+//Font-weight
+$fontWeightConfig: 200, 300, 400, 500, 600, 700, 800, bold;
+@each $weight in $fontWeightConfig {
+  .f-w-#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+//Line-height
+$lineHeightConfig: 18, 20, 22, 24, 32;
+@each $height in $lineHeightConfig {
+  .l-h-#{nth($height, 1)} {
+    line-height: #{nth($height, 1)}px;
+  }
+}
+
+$lineHeightConfig1: normal, auto, 1;
+@each $height in $lineHeightConfig1 {
+  .l-h-#{nth($height, 1)} {
+    line-height: #{nth($height, 1)};
+  }
+}
+
+// color
+$textColors: "primary" var(--text-1), "secondary" var(--text-2), "tertiary" var(--text-3), "hint" var(--text-4),
+  "color-primary" var(--primary), "color-secondary" var(--secondary), "black" var(--black), "white" var(--white),
+  "success" var(--success), "error" var(--error), "warn" var(--warn);
+
+@each $color in $textColors {
+  .txt-#{nth($color, 1)} {
+    color: nth($color, 2) !important;
+  }
+}
+
+//Background color
+$bgColors: "color-primary" var(--primary), "color-secondary" var(--secondary), "primary" var(--primary-bg-1),
+  "secondary" var(--primary-bg-2);
+
+@each $color in $bgColors {
+  .bg-#{nth($color, 1)} {
+    background-color: nth($color, 2) !important;
+  }
+}
+
+//Hover colors
+@each $color in $textColors {
+  .txt-hover-#{nth($color, 1)} {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      color: nth($color, 2) !important;
+    }
+  }
+}
+
+@each $color in $bgColors {
+  .bg-hover-#{nth($color, 1)} {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background: nth($color, 2) !important;
+    }
+  }
+}
+
+$hoverOpacity: 0 0, 75 0.75;
+@each $opacity in $hoverOpacity {
+  .o-#{nth($opacity, 1)} {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      opacity: nth($opacity, 2);
+    }
+  }
+}
+
+//Width
+$sizeWidth: "100" 100%, "75" 75%, "50" 50%, "25" 25%, auto auto;
+@each $size in $sizeWidth {
+  .w-#{nth($size, 1)} {
+    width: nth($size, 2) !important;
+  }
+}
+
+$minMaxWidth: 96, 100, 120, 150, 200, 300;
+@each $size in $minMaxWidth {
+  .mw-#{nth($size, 1)} {
+    max-width: #{nth($size, 1)}px !important;
+  }
+}
+
+@each $size in $minMaxWidth {
+  .minw-#{nth($size, 1)} {
+    min-width: #{nth($size, 1)}px !important;
+  }
+}
+
+//Height
+$sizeHeight: "100" 100%, "75" 75%, "50" 50%, "25" 25%;
+@each $size in $sizeHeight {
+  .h-#{nth($size, 1)} {
+    height: nth($size, 2);
+  }
+}
+
+//Cursor
+$cursorType: pointer, default, disabled, none;
+@each $cursor in $cursorType {
+  .cursor-#{nth($cursor, 1)} {
+    cursor: nth($cursor, 1);
+  }
+}
+
+//Padding and Margin
+
+$marginAlign: "auto" auto, "x-auto" auto, "y-auto" auto;
+@each $margin in $marginAlign {
+  .m-#{nth($margin, 1)} {
+    margin: nth($margin, 2);
+  }
+}
+
+$spacerOrigin: "m" margin, "p" padding;
+$spacerPosition: "t" top, "b" bottom, "r" right, "l" left;
+$spacerPositionXY: "x" left right, "y" top bottom;
+$spacerSizing: 0, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 32, 48, 50, 60, 80;
+
+@each $origin in $spacerOrigin {
+  @each $position in $spacerPositionXY {
+    @each $sizing in $spacerSizing {
+      .#{nth($origin, 1)}#{nth($position, 1)}-#{nth($sizing, 1)} {
+        #{nth($origin, 2)}-#{nth($position, 2)}: nth($sizing, 1) + px !important;
+        #{nth($origin, 2)}-#{nth($position, 3)}: nth($sizing, 1) + px !important;
+      }
+    }
+  }
+}
+
+@each $origin in $spacerOrigin {
+  @each $sizing in $spacerSizing {
+    .#{nth($origin, 1)}-#{nth($sizing, 1)} {
+      #{nth($origin, 2)}: nth($sizing, 1) + px !important;
+    }
+  }
+}
+
+@each $origin in $spacerOrigin {
+  @each $position in $spacerPosition {
+    @each $sizing in $spacerSizing {
+      .#{nth($origin, 1)}#{nth($position, 1)}-#{nth($sizing, 1)} {
+        #{nth($origin, 2)}-#{nth($position, 2)}: nth($sizing, 1) + px !important;
+      }
+    }
+  }
+}
+
+// Border Style
+$borderStyle: border, border-top, border-bottom, border-left, border-right;
+@each $borderValue in $borderStyle {
+  .#{nth($borderValue, 1)} {
+    #{nth($borderValue, 1)}: 1px solid var(--border-3);
+  }
+  .#{nth($borderValue, 1)}-light {
+    #{nth($borderValue, 1)}: 1px solid var(--border-4);
+  }
+  .#{nth($borderValue, 1)}-exlight {
+    #{nth($borderValue, 1)}: 1px solid var(--border-5);
+  }
+}
+@each $borderValue in $borderStyle {
+  .#{nth($borderValue, 1)}-0 {
+    #{nth($borderValue, 1)}: 0 !important;
+  }
+}
+
+//Row and Column Border
+@each $borderValue in $borderStyle {
+  .row-#{nth($borderValue, 1)} > :not([hidden]) ~ :not([hidden]) {
+    #{nth($borderValue, 1)}: 1px solid var(--border-4);
+  }
+}
+
+//Text Style
+$txtAlign: "left" left, "center" center, "right" right;
+@each $align in $txtAlign {
+  .text-#{nth($align, 1)} {
+    text-align: nth($align, 2);
+  }
+}
+
+$txtTransform: uppercase, lowercase, capitalize;
+@each $transform in $txtTransform {
+  .text-#{$transform} {
+    text-transform: $transform !important;
+  }
+}
+
+$wordBreak: break-word, break-all, none, normal;
+@each $break in $wordBreak {
+  .word-#{nth($break, 1)} {
+    word-break: nth($break, 1);
+  }
+}
+
+$whiteSpace: wrap, nowrap, none, unset;
+@each $space in $whiteSpace {
+  .w-#{nth($space, 1)} {
+    white-space: nth($space, 1);
+  }
+}
+
+//Display Classes
+$displayClasses: flex, block, inline-block, none, grid, inline-grid;
+@each $display in $displayClasses {
+  .d-#{$display} {
+    display: $display !important;
+  }
+}
+
+$flexWrap: wrap, no-wrap, none, warp-reserve, unset;
+@each $wrap in $flexWrap {
+  .flex-#{$wrap} {
+    flex-wrap: $wrap;
+  }
+}
+
+$flexDirection: row, column, row-reverse, column-reverse;
+@each $direction in $flexDirection {
+  .flex-#{nth($direction, 1)} {
+    flex-direction: nth($direction, 1);
+  }
+}
+
+$flexAlign: "start" flex-start, "center" center, "end" flex-end, "between" space-between, "stretch" stretch;
+@each $align in $flexAlign {
+  .align-#{nth($align, 1)} {
+    align-items: nth($align, 2);
+  }
+}
+
+$flexAlign: "start" flex-start, "center" center, "end" flex-end, "between" space-between, "stretch" stretch;
+@each $align in $flexAlign {
+  .align-content-#{nth($align, 1)} {
+    align-items: nth($align, 2);
+  }
+}
+
+$flexContent: "start" flex-start, "center" center, "end" flex-end, "between" space-between, "around" space-around;
+@each $justify in $flexContent {
+  .justify-#{nth($justify, 1)} {
+    justify-content: nth($justify, 2) !important;
+  }
+}
+
+$placeItems: "start" start, "center" center, "end" end, "start-self" "start-self", "start-end" "start-end";
+@each $place in $placeItems {
+  .place-#{nth($place, 1)} {
+    place-items: nth($place, 2);
+  }
+}
+
+//Column Gap
+
+$sizesGap: 4, 8, 12, 16, 20, 24, 30, 32, 36;
+@each $gap in $sizesGap {
+  .g-#{nth($gap, 1)} {
+    gap: nth($gap, 1) + px;
+    -webkit-gap: nth($gap, 1) + px;
+  }
+  .c-g-#{nth($gap, 1)} {
+    column-gap: nth($gap, 1) + px;
+    -webkit-column-gap: nth($gap, 1) + px;
+  }
+  .r-g-#{nth($gap, 1)} {
+    row-gap: nth($gap, 1) + px;
+    -webkit-row-gap: nth($gap, 1) + px;
+  }
+}
+
+//Position
+$positionSide: relative, absolute, sticky, fixed, unset;
+@each $position in $positionSide {
+  .#{nth($position, 1)} {
+    position: nth($position, 1);
+  }
+}
+
+//Z-Index
+$zIndex: 0, 1, 2, 100, 999, 9999;
+@each $zindex in $zIndex {
+  .index-#{nth($zindex, 1)} {
+    z-index: nth($zindex, 1);
+  }
+}
+
+//Cursor classes
+$cursorMouse: pointer, not-allowed, none, default;
+@each $cursor in $cursorMouse {
+  .cursor-#{nth($cursor, 1)} {
+    cursor: nth($cursor, 1) !important;
+  }
+}
+
+//Border radius
+$borderRadius: 2, 4, 6, 8, 10, 12, 20;
+@each $radius in $borderRadius {
+  .radius-#{nth($radius, 1)} {
+    border-radius: nth($radius, 1) + px !important;
+  }
+}
+
+//Flex Classes
+$flexFlow: 1, 2, 3;
+@each $flow in $flexFlow {
+  .flex-#{$flow} {
+    flex: $flow;
+  }
+}

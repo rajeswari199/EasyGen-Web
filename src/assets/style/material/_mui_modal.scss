@@ -1,0 +1,45 @@
+//Modal content
+.MuiDialog-container {
+  background: var(--black-bg-60) !important;
+  .MuiDialogTitle-root {
+    position: relative;
+    padding: 16px 24px;
+    height: 74px;
+    .modal-close-icon {
+      @include positionTopRight(absolute, 24px, 24px);
+    }
+  }
+  .MuiDialogContent-root {
+    padding: 24px 32px 32px 24px !important;
+  }
+  .MuiDialogActions-root {
+    height: 74px;
+    background: var(--primary-bg-1);
+    padding: 16px 24px;
+  }
+}
+
+.MuiDialog-root {
+  .MuiDialog-paper {
+    border-radius: $radius10;
+    background: var(--primary-bg-1);
+  }
+  &.forgot-password-modal {
+    .MuiDialog-container .MuiDialog-paper {
+      // max-width: 375px;
+      width: 100%;
+      background: var(--primary-bg-1);
+    }
+  }
+  &.purchase-coins-modal {
+    .MuiDialog-container {
+      align-items: flex-start !important;
+      .MuiDialog-paper {
+        margin: 0;
+        width: 100%;
+        // max-width: 375px;
+        background: var(--primary-bg-1);
+      }
+    }
+  }
+}

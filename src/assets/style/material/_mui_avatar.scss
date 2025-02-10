@@ -1,0 +1,22 @@
+.MuiAvatar-root {
+  @include font(14px !important, normal, 600, var(--text-1) !important);
+  background: var(--primary-bg-1) !important;
+  &.bordered {
+    border: $border-primary;
+  }
+  &.bordered-white {
+    border: $border-white;
+  }
+  &.medium {
+    @include size(50px);
+  }
+  &.small {
+    @include size(38px);
+  }
+  &.profile-img {
+    @include size(100px);
+  }
+  .MuiAvatar-img {
+    object-fit: cover !important;
+  }
+}

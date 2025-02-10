@@ -1,0 +1,141 @@
+@import "../includes";
+
+.MuiFormControl-root {
+  width: 100%;
+  .MuiInputBase-root,
+  .MuiOutlinedInput-root {
+    @include placeholder-font(14px, 17px, 400, normal, var(--text-3));
+    background: var(--primary-bg-2);
+    .MuiInputBase-input {
+      padding: 13px 14px !important;
+      @include font(14px, 24px, 500, var(--text-1));
+      height: auto;
+      background: var(--transparent);
+      @include placeholder-font(14px, 20px, 500, normal, var(--text-3));
+    }
+    legend {
+      width: 0 !important;
+    }
+    //outline-styles
+    .MuiOutlinedInput-notchedOutline {
+      border: none !important;
+    }
+    &.MuiInputBase-adornedStart {
+      padding-left: 16px;
+    }
+    .MuiSvgIcon-root {
+      color: var(--text-3);
+    }
+
+    //Mui Actions
+    &:hover,
+    &:focus {
+      border-color: var(--secondary) !important;
+      .MuiOutlinedInput-notchedOutline {
+        border-color: var(--secondary) !important;
+      }
+    }
+    &.Mui-focused {
+      .MuiOutlinedInput-notchedOutline {
+        border-width: 1px !important;
+      }
+    }
+    &.Mui-error {
+      color: var(--error) !important;
+      .MuiOutlinedInput-notchedOutline {
+        border-color: var(--error) !important;
+      }
+    }
+    &.Mui-disabled {
+      color: var(--text-4);
+      -webkit-text-fill-color: var(--text-4);
+      background-color: var(--white-opacity-07);
+      cursor: not-allowed;
+      &:hover,
+      &:focus {
+        .MuiOutlinedInput-notchedOutline {
+          border: $border-1 !important;
+        }
+      }
+    }
+    .Mui-disabled {
+      color: var(--text-4);
+      -webkit-text-fill-color: var(--text-4);
+      cursor: not-allowed;
+    }
+  }
+  .MuiInputAdornment-root {
+    .MuiIconButton-root {
+      color: var(--text-2);
+    }
+    .MuiSvgIcon-root {
+      font-size: 18px;
+      color: var(--text-4);
+    }
+    &.MuiInputAdornment-positionEnd {
+      .MuiIconButton-root {
+        margin-right: -8px !important;
+      }
+    }
+  }
+  //error Message
+  .MuiFormHelperText-contained {
+    margin: 6px 0 0;
+    @include font-space(12px, 1.67, bold, normal, var(--text-2));
+    &.Mui-error {
+      color: var(--error) !important;
+    }
+  }
+}
+
+.MuiFormControl-root .MuiOutlinedInput-root {
+  .MuiInputBase-input {
+    padding: 13px 14px !important;
+  }
+}
+
+.MuiFormControl-root .MuiOutlinedInput-root {
+  textarea.MuiInputBase-input {
+    padding: 0 !important;
+  }
+}
+
+.MuiFormHelperText-root {
+  margin: 6px 0 0;
+  @include font-space(12px !important, 1.67 !important, bold !important, normal, var(--text-2));
+  &.Mui-error {
+    color: var(--error) !important;
+  }
+}
+
+.form {
+  &-label {
+    display: inline-block;
+    @include font-space(12px, 20px, 500, normal, var(--text-3));
+  }
+  &-login-label {
+    display: inline-block;
+    margin-bottom: 8px;
+    @include font-space(14px, 20px, 600, normal, var(--text-3));
+  }
+}
+
+// Auto Select
+input:-internal-autofill-selected {
+  @include appearance(none);
+  background-image: none !important;
+  background: var(--transparent) !important;
+  -webkit-text-fill-color: var(--text-1) !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px var(--primary-bg-2) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--text-1) !important;
+}

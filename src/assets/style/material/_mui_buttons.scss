@@ -1,0 +1,78 @@
+.MuiButton-root {
+  text-transform: unset !important;
+  box-shadow: none !important;
+  &.MuiButton-contained {
+    &.MuiButton-containedPrimary {
+      @include button-color(var(--white) !important, var(--primary-gradient) !important, var(--primary) !important);
+    }
+    &.MuiButton-containedSecondary {
+      @include button-color(var(--white) !important, var(--secondary) !important, var(--secondary) !important);
+    }
+    &.MuiButton-containedError {
+      @include button-color(var(--white) !important, var(--error) !important, var(--error) !important);
+    }
+    &.wallet-filter-btn {
+      border-radius: 8px !important;
+      @include button-color(var(--text-4) !important, var(--primary-bg-2) !important, var(--primary-bg-2) !important);
+    }
+    &.Mui-disabled {
+      color: var(--text-4) !important;
+      background: var(--border-4) !important;
+    }
+  }
+  &.MuiButton-header {
+    @include button-color(
+      var(--text-2) !important,
+      var(--white-opacity-07) !important,
+      var(--white-opacity-07) !important
+    );
+    &:hover,
+    &:focus {
+      color: var(--text-1) !important;
+    }
+  }
+  &.MuiButton-outlined {
+    &.MuiButton-outlinedInherit {
+      @include button-color(var(--text-1), var(--transparent), var(--border-1));
+      &:hover,
+      &:focus {
+        background: var(--white-opacity-05) !important;
+      }
+    }
+    &.MuiButton-outlinedError {
+      @include button-color(var(--error), var(--transparent), var(--error));
+      &:hover,
+      &:focus {
+        background: var(--error-opacity-07) !important;
+      }
+    }
+    &.Mui-outline-light {
+      @include button-color(var(--text-3) !important, var(--transparent) !important, var(--border-4) !important);
+    }
+    &.Mui-disabled {
+      color: var(--text-4) !important;
+      border: none !important;
+      background: var(--border-4) !important;
+    }
+  }
+  &.MuiButton-sizeSmall {
+    height: 36px;
+    @include button-color(var(--text-3) !important, var(--transparent) !important, var(--border-5) !important);
+    .MuiButton-iconSizeSmall {
+      font-size: 12px !important;
+    }
+  }
+  &.MuiButton-sizeMedium {
+    height: 46px;
+    font-size: 16px !important;
+    &.button-selected {
+      border: $border-btn-selected;
+    }
+  }
+  &.MuiButton-sizeLarge {
+    height: 50px;
+    padding: 0 24px;
+    font-size: 18px !important;
+    border-radius: 6px;
+  }
+}
