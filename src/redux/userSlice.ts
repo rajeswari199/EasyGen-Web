@@ -5,6 +5,7 @@ import { apiRoutes } from '../constants/apiRoutes';
 import { UserDetails } from '../common/interface/userDetails.interface';
 import { SignIn, SignUp } from '../common/interface/signIn.interface';
 import { enqueueSnackbar } from 'notistack';
+import { Errors } from '../constants/errors';
 
 export interface UserState {
   userDetails: any;
@@ -62,7 +63,7 @@ export const registerUser = (userData: SignUp): any => {
       const data = await Client.post(apiRoutes.signUp, userData);
       dispatch(registrationSuccess(data.data));
     } catch (err: any) {
-      enqueueSnackbar(err?.response?.data?.message || err, {
+      enqueueSnackbar(err?.response?.data?.message || err || Errors.appError, {
         preventDuplicate: false,
         persist: false,
         variant: 'error'
@@ -86,7 +87,7 @@ export const loginUser = (userData: SignIn, deviceId: string): any => {
       console.log('accessToken', data.data.data, JSON.parse(newToken ?? ''))
       dispatch(loginSuccess(true));
     } catch (err: any) {
-      enqueueSnackbar(err?.response?.data?.message || err, {
+      enqueueSnackbar(err?.response?.data?.message || err || Errors.appError, {
         preventDuplicate: false,
         persist: false,
         variant: 'error'
@@ -124,7 +125,7 @@ export const fetchUserDetails = (): any => {
       console.log(details.data)
       dispatch(getUserDetails(details?.data?.data));
     } catch (err: any) {
-      enqueueSnackbar(err?.response?.data?.message || err, {
+      enqueueSnackbar(err?.response?.data?.message || err || Errors.appError, {
         preventDuplicate: false,
         persist: false,
         variant: 'error'
@@ -145,7 +146,7 @@ export const emailExists = (email: string): any => {
         throw new Error(data.data.message);
       }
     } catch (err: any) {
-      enqueueSnackbar(err?.response?.data?.message || err, {
+      enqueueSnackbar(err?.response?.data?.message || err || Errors.appError, {
         preventDuplicate: false,
         persist: false,
         variant: 'error'

@@ -16,6 +16,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### `npm run serve`
 
+## Docker Image
+
+```bash
+$ docker build -t easy-gen .
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
